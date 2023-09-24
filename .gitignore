@@ -30,7 +30,7 @@ share/python-wheels/
 *.egg
 MANIFEST
 *.json
-cache/*
+cache/*.json
 output/*
 
 # PyInstaller
