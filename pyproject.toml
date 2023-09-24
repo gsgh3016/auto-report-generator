@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "auto-web-crawling"
+version = "0.1.0"
+description = ""
+authors = ["gsgh3016 <gsgh3016@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+bs4 = "^0.0.1"
+openai = "^0.28.0"
+python-dotenv = "^1.0.0"
+konlpy = "^0.6.0"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^3.4.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
