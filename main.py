@@ -5,12 +5,17 @@ from report_generation import generate_report
 import os
 import datetime
 import json
+import warnings
+# if necessary
+# from keyword_generation import get_keywords
 
-# ANSI Color Codes
 COLOR_GREEN = "\033[92m"
 COLOR_YELLOW = "\033[93m"
 COLOR_BLUE = "\033[94m"
 COLOR_RESET = "\033[0m"
+
+warnings.simplefilter(action='ignore', category=Warning)
+
 
 def getPostData(post, jsonResult, cnt):
     title = post['title']
@@ -31,13 +36,13 @@ def getPostData(post, jsonResult, cnt):
         'pDate': pDate
     })
 
-# Main execution
+
 if __name__ == "__main__":
     print(f"{COLOR_BLUE}API 키 로딩 중...{COLOR_RESET}")
     client_id, client_secret = load_api_keys()
     open_ai_key = os.environ.get('open_ai_key')
 
-    node = 'news'
+    node = 'news'   # 크롤링 대상 선택 가능
     srcText = input('검색어를 입력하세요: ')
     json_file_path = f"./cache/{srcText}_naver_{node}.json"
     initialize_cache_file()

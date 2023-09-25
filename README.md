@@ -11,17 +11,41 @@
 
 ## 환경 설정
 
-- 파이썬(>=3.7), 자바(konlpy) 설치
-
-```bash
-pip install poetry
-```
-```bash
-poetry install
-```
+1. 파이썬(>=3.7), 자바(konlpy) 설치
+2. poetry 설치
+> ```bash
+> pip install poetry
+> ```
+3. 종속성 모듈 설치
+> ```bash
+> poetry install
+> ```
+4. ./.env 파일 만들기
+> ```python
+> client_id = "your_naver_client_id"
+> client_secret = "your_naver_client_secret"
+>open_ai_key = "your_open_ai_key"
+> ```
 
 ## 실행
 
-```bash
-poetry run python3 main.py
-```
+> ```bash
+> poetry run python3 main.py
+> ```
+
+## 기능
+
+### 네이버 검색 API로 `{키워드}_naver_{카테고리}.json` 파일 생성
+- `main.py`의 `node` 변수로 카테고리 선정 가능
+- 실행 후 키워드 입력 시 기존 json 파일 유무에 따라 크롤링 여부 결정
+- json 파일 생성 시 `./cache/` 디렉토리에 생성
+
+### 뉴스 기사 본문 텍스트 크롤링 및 형태소 별 빈도 분석
+- `./cache/extracted_text.json`파일에 `형태소 키워드:빈도수` 형식으로 저장
+- `gpt-3.5-turbo-0613`모델의 프롬프팅에 사용
+
+### `gpt-3.5-turbo-0613` 모델을 활용한 보고서 생성
+- `report_generation.py` 모듈을 통해 `./output/report.txt` 파일에 보고서 생성
+
+### (선택)
+- `get_keywords()` 함수로 `./keywords/generated_keyword.txt` 파일 생성
