@@ -29,6 +29,12 @@
 
 ## 실행
 
+1. poetry 쉘 생성
+> ```bash
+> poetry shell
+> ```
+
+2. poetry 쉘 내부에서 main.py 실행
 > ```bash
 > poetry run python3 main.py
 > ```
