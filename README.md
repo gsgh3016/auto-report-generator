@@ -24,7 +24,7 @@
 > ```python
 > client_id = "your_naver_client_id"
 > client_secret = "your_naver_client_secret"
->open_ai_key = "your_open_ai_key"
+> open_ai_key = "your_open_ai_key"
 > ```
 
 ## 실행
