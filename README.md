@@ -8,6 +8,7 @@
 - 크롤링한 데이터를 형태소 분석을 통해 빈도수 체크
 - 상위 빈도 단어, 반복 명령을 통해 보고서 생성
 - cache에 stopword 지정 가능
+- 회고 in [velog](https://velog.io/@gsgh3016/%ED%82%A4%EC%9B%8C%EB%93%9C-%EA%B8%B0%EB%B0%98-%EB%B3%B4%EA%B3%A0%EC%84%9C-%EC%9E%90%EB%8F%99%ED%99%94-%EB%AA%A8%EB%8D%B8)
 
 ## 환경 설정
 
