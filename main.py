@@ -58,7 +58,8 @@ if __name__ == "__main__":
         cnt = 0
         jsonResult = []
         jsonResponse = getNaverSearch(
-            node, srcText, 1, 100, client_id, client_secret)
+            node, srcText, 1, 100, client_id, client_secret
+        )
         total = jsonResponse['total']
 
         while (jsonResponse is not None) and (jsonResponse['display'] != 0):
@@ -68,7 +69,8 @@ if __name__ == "__main__":
 
             start = jsonResponse['start'] + jsonResponse['display']
             jsonResponse = getNaverSearch(
-                node, srcText, start, 100, client_id, client_secret)
+                node, srcText, start, 100, client_id, client_secret
+            )
 
         with open(json_file_path, 'w', encoding='utf8') as outfile:
             jsonFile = json.dumps(jsonResult, indent=4,

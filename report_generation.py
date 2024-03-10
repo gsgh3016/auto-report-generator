@@ -34,7 +34,10 @@ def generate_report(contents_set, api_key, search_keyword, max_attempts: int = 1
     keywords = ", ".join(list(contents_set))
     messages = [
         {"role": "system", "content": f"너는 {search_keyword} 분야의 전문가로서 조언을 주고 있어"},
-        {"role": "user", "content": f"'{search_keyword}'에 관한 주제로 웹 크롤링과 형태소 분석을 통해 얻은 주요 키워드는 {keywords}입니다. 이 키워드들을 바탕으로 보고서를 작성해주세요."}
+        {
+            "role": "user", 
+            "content": f"'{search_keyword}'에 관한 주제로 웹 크롤링과 형태소 분석을 통해 얻은 주요 키워드는 {keywords}입니다. 이 키워드들을 바탕으로 보고서를 작성해주세요."
+        }
     ]
     
     response_texts = []

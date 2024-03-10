@@ -50,7 +50,9 @@ def text_tokenizer(text: str) -> dict:
 
     stopwords = load_stopwords()
     
-    filtered_tokens = [word for word, tag in tokens if tag in meaningful_tags and re.match("^[가-힣]+$", word) and word not in stopwords and len(word) > 1]
+    filtered_tokens = [
+        word for word, tag in tokens if tag in meaningful_tags and re.match("^[가-힣]+$", word) and word not in stopwords and len(word) > 1
+    ]
 
     counter = Counter(filtered_tokens)
     return dict(counter.most_common(20))
